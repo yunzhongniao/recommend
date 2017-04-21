@@ -8,6 +8,12 @@
 		<result column="account" property="account" />
 		<result column="name" property="name"/>
 		<result column="password" property="password"/>
+		<result column="role" property="role"/>
 	</resultMap>
 
+	<sql id="allProperties">id,account,name,password,role</sql>
+
+	<select id="getByAccount" resultMap="baseResultMap">
+		SELECT <include refid="allProperties"/> from ps_accounts WHERE  account = #{account}
+	</select>
 </mapper>
