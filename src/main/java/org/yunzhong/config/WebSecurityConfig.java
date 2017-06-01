@@ -23,9 +23,9 @@ import org.springframework.security.web.authentication.logout.SecurityContextLog
 /**
  * Created by yunzhong on 2017/4/19.
  */
-@Configuration
-@EnableWebSecurity
-@EnableGlobalMethodSecurity(prePostEnabled = true)
+//@Configuration
+//@EnableWebSecurity
+//@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired

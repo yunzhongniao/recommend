@@ -1,0 +1,30 @@
+<configuration scan="false">
+    <!-- 控制台输出 -->
+    <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss,"Asia/Shanghai"} [%.-1level] [%thread] %logger{36} - %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+    <!-- File Appender -->
+    <appender name="File" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!-- Support multiple-JVM writing to the same log file -->
+        <prudent>true</prudent>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>server-log-%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss,"Asia/Shanghai"} [%.-1level] [%thread] %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="Console"/>
+    </root>
+
+    <logger name="org.springframework" level="INFO"></logger>
+    <logger name="org.mybatis" level="INFO"></logger>
+    <logger name="org.apache.ibatis" level="INFO"></logger>
+    <logger name="org.activiti" level="INFO"></logger>
+</configuration>
