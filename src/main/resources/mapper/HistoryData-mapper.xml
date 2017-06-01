@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.yunzhong.service.dao.HistoryDataDAO">
+
+	<resultMap type="org.yunzhong.service.model.HistoryData" id="baseResultMap">
+	</resultMap>
+
+
+	<insert id="batchInsert">
+		insert into history_datas(id, history_date,open, max,
+		min,close,deal_count, deal_value)
+		values
+		<foreach collection="datas" index="data" separator="," open="("
+			close=")">
+			#{data.id},
+			#{data.date},
+			#{data.open},
+			#{data.max},
+			#{data.min},
+			#{data.close},
+			#{data.dealCount},
+			#{data.dealValue}
+		</foreach>
+	</insert>
+</mapper>

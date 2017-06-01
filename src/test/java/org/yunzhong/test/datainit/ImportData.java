@@ -6,18 +6,16 @@ import java.nio.charset.Charset;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 import java.util.StringTokenizer;
 
-import org.apache.catalina.core.ApplicationContext;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
+import org.yunzhong.service.biz.HistoryDataService;
 import org.yunzhong.service.model.HistoryData;
 import org.yunzhong.test.BasicSpringTest;
 
@@ -27,7 +25,7 @@ public class ImportData extends BasicSpringTest {
     private static final Logger log = LoggerFactory.getLogger(ImportData.class);
 
     @Autowired
-    private ApplicationContext context;
+    private HistoryDataService historyService;
 
     @Test
     public void testImportDataToDB() {
@@ -36,7 +34,7 @@ public class ImportData extends BasicSpringTest {
             File[] children = file.listFiles();
             if (children != null) {
                 for (File child : children) {
-                    String id = child.getName().replace(".txt", "");
+                    String id = child.getName().replace(".TXT", "");
                     if (StringUtils.isEmpty(id)) {
                         log.warn("Failed to parse file name {1}", child.getName());
                         continue;
@@ -49,6 +47,9 @@ public class ImportData extends BasicSpringTest {
                         } else {
                             List<HistoryData> datas = new ArrayList<>();
                             for (String readLine : readLines) {
+                                if (!readLine.contains(";")) {
+                                    continue;
+                                }
                                 StringTokenizer tokenizer = new StringTokenizer(readLine, ";");
 
                                 HistoryData data = new HistoryData();
@@ -59,11 +60,13 @@ public class ImportData extends BasicSpringTest {
 
                                 data.setOpen(Double.valueOf(tokenizer.nextToken()));
                                 data.setMax(Double.valueOf(tokenizer.nextToken()));
+                                data.setMin(Double.valueOf(tokenizer.nextToken()));
                                 data.setClose(Double.valueOf(tokenizer.nextToken()));
                                 data.setDealCount(Long.valueOf(tokenizer.nextToken()));
                                 data.setDealValue(Double.valueOf(tokenizer.nextToken()));
                                 datas.add(data);
                             }
+                            historyService.batchInsert(datas);
                         }
                     } catch (IOException e) {
                         log.error("Failed to read file {" + child.getName() + "}", e);

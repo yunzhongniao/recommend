@@ -13,6 +13,7 @@ public class HistoryData extends BaseModel {
     private Date date;
     private Double open;
     private Double max;
+    private Double min;
     private Double close;
     private Long dealCount;
     private Double dealValue;
@@ -58,6 +59,12 @@ public class HistoryData extends BaseModel {
     }
     public void setId(String id) {
         this.id = id;
+    }
+    public Double getMin() {
+        return min;
+    }
+    public void setMin(Double min) {
+        this.min = min;
     }
     
 }
