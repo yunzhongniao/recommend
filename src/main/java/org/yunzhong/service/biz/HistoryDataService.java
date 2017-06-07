@@ -1,6 +1,7 @@
 package org.yunzhong.service.biz;
 
 import java.util.List;
+import java.util.Map;
 
 import org.yunzhong.service.model.HistoryData;
 import org.yunzhong.service.model.HistoryDataStat;
@@ -17,5 +18,5 @@ public interface HistoryDataService {
 	 * @param dataId
 	 * @return
 	 */
-	List<HistoryDataStat> stat(String dataId);
+    Map<Integer, HistoryDataStat> stat(String dataId);
 }

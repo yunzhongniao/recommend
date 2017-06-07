@@ -30,4 +30,8 @@
 			#{data.dealValue}
 		</foreach>
 	</insert>
+	
+	<select id="selectById" resultMap="baseResultMap">
+		select * from history_datas where id = #{dataId} order by history_date
+	</select>
 </mapper>

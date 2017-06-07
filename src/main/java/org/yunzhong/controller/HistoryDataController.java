@@ -1,10 +1,12 @@
 package org.yunzhong.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.yunzhong.service.biz.HistoryDataService;
 import org.yunzhong.service.model.HistoryDataStat;
@@ -27,8 +29,8 @@ public class HistoryDataController {
 	 * @return
 	 */
 	@ApiOperation(value = "获得单支股票的统计信息")
-	@RequestMapping("{dataId}/stat/single")
-	public List<HistoryDataStat> stat(@PathVariable String dataId){
+	@RequestMapping(value="{dataId}/stat/single",method=RequestMethod.GET)
+	public Map<Integer, HistoryDataStat> stat(@PathVariable String dataId){
 		log.info("get sock ["+dataId+"] stats info.");
 		return historyService.stat(dataId);
 	}
