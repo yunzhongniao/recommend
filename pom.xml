@@ -26,6 +26,8 @@
 		<bonecp_version>0.8.0.RELEASE</bonecp_version>
 		<pagehelper_version>4.0.0</pagehelper_version>
 		<mysql-connector.version>5.1.38</mysql-connector.version>
+		<lombok.version>1.16.10</lombok.version>
+		<springfox.swagger.version>2.6.1</springfox.swagger.version>
 	</properties>
 
 	<dependencies>
@@ -83,7 +85,6 @@
 		<dependency>
 			<groupId>net.sourceforge.nekohtml</groupId>
 			<artifactId>nekohtml</artifactId>
-			<version>1.9.22</version>
 		</dependency>
 		<dependency>
 			<groupId>com.google.guava</groupId>
@@ -91,11 +92,33 @@
 			<version>22.0</version>
 		</dependency>
 		<dependency>
-                <groupId>mysql</groupId>
-                <artifactId>mysql-connector-java</artifactId>
-                <version>${mysql-connector.version}</version>
-            </dependency>
-            
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-websocket</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-messaging</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${springfox.swagger.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>${springfox.swagger.version}</version>
+        </dependency>
 	</dependencies>
 
 	<build>

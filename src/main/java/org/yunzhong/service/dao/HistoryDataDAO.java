@@ -12,4 +12,10 @@ public interface HistoryDataDAO extends BaseDAO {
      * @return
      */
     int batchInsert(@Param("datas") List<HistoryData> datas);
+
+	/**
+	 * @param dataId
+	 * @return
+	 */
+	List<HistoryData> selectById(@Param("dataId")String dataId);
 }

@@ -2,6 +2,11 @@ package org.yunzhong.service.model;
 
 import java.util.Date;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
+@Data
+@EqualsAndHashCode(callSuper = false)
 public class HistoryData extends BaseModel {
 
     /**
@@ -18,53 +23,5 @@ public class HistoryData extends BaseModel {
     private Long dealCount;
     private Double dealValue;
     
-    public Date getDate() {
-        return date;
-    }
-    public void setDate(Date date) {
-        this.date = date;
-    }
-    public Double getOpen() {
-        return open;
-    }
-    public void setOpen(Double open) {
-        this.open = open;
-    }
-    public Double getMax() {
-        return max;
-    }
-    public void setMax(Double max) {
-        this.max = max;
-    }
-    public Double getClose() {
-        return close;
-    }
-    public void setClose(Double close) {
-        this.close = close;
-    }
-    public Long getDealCount() {
-        return dealCount;
-    }
-    public void setDealCount(Long dealCount) {
-        this.dealCount = dealCount;
-    }
-    public Double getDealValue() {
-        return dealValue;
-    }
-    public void setDealValue(Double dealValue) {
-        this.dealValue = dealValue;
-    }
-    public String getId() {
-        return id;
-    }
-    public void setId(String id) {
-        this.id = id;
-    }
-    public Double getMin() {
-        return min;
-    }
-    public void setMin(Double min) {
-        this.min = min;
-    }
     
 }

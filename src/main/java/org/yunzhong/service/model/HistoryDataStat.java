@@ -3,10 +3,13 @@ package org.yunzhong.service.model;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-/**
- * Created by yunzhong on 2017/4/20.
- */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class Account extends BaseModel {
+public class HistoryDataStat extends BaseModel {
+	/**
+	* 
+	*/
+	private static final long serialVersionUID = -6634682167043972520L;
+
+	
 }

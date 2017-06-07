@@ -11,6 +11,11 @@ import java.util.Set;
 public class UserInfo implements UserDetails{
 
     /**
+	 * 
+	 */
+	private static final long serialVersionUID = 4959961222721982127L;
+
+	/**
      * 用户ID
      */
     private Long id;

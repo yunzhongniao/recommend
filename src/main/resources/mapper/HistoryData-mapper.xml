@@ -3,6 +3,14 @@
 <mapper namespace="org.yunzhong.service.dao.HistoryDataDAO">
 
 	<resultMap type="org.yunzhong.service.model.HistoryData" id="baseResultMap">
+		<id property="id" column="id"></id>
+		<id property="date" column="history_date"/>
+		<result property="open" column="open"/>
+		<result property="max" column="max"/>
+		<result property="min" column="min"/>
+		<result property="close" column="close"/>
+		<result property="dealCount" column="deal_count"/>
+		<result property="dealValue" column="deal_value"/>
 	</resultMap>
 
 

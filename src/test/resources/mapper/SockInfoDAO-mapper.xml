@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.yunzhong.service.dao.SockInfoDAO">
+
+	<resultMap type="org.yunzhong.service.model.SockInfo" id="baseResultMap">
+		<id property="id" column="id"></id>
+		<result property="name" column="name" />
+	</resultMap>
+
+	<insert id="insert">
+		insert into sock_info(id,name)
+		values
+		<trim prefix="(" suffix=")">
+			#{sockInfo.id},
+			#{sockInfo.name}
+		</trim>
+	</insert>
+</mapper>
