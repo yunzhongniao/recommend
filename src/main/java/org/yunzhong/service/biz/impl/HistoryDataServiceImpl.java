@@ -61,9 +61,7 @@ public class HistoryDataServiceImpl implements HistoryDataService {
 					endDate = data.getDate();
 				} else {// 未涨
 					old = data;
-					startDate = null;
 					if (cacheCount <= 1) { // 没有连涨
-						continue;
 					} else { // 有连涨，记录历史
 						HistoryDataStat resultC = result.get(cacheCount);
 						if (resultC == null) {
@@ -75,9 +73,10 @@ public class HistoryDataServiceImpl implements HistoryDataService {
 						collection.setStart(startDate);
 						collection.setEnd(endDate);
 						resultC.getDataCollection().add(collection);
-						
-						cacheCount = 1;
 					}
+					cacheCount = 0;
+					cacheData = new ArrayList<>();
+					startDate = null;
 				}
 			}
 		}

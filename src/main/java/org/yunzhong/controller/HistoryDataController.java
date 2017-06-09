@@ -30,8 +30,24 @@ public class HistoryDataController {
 	 */
 	@ApiOperation(value = "获得单支股票的统计信息")
 	@RequestMapping(value="{dataId}/stat/single",method=RequestMethod.GET)
-	public Map<Integer, HistoryDataStat> stat(@PathVariable String dataId){
+	public Map<Integer, HistoryDataStat> statSingle(@PathVariable String dataId){
 		log.info("get sock ["+dataId+"] stats info.");
 		return historyService.stat(dataId);
+	}
+	
+	/**
+	 * @param dataId
+	 * @param count
+	 * @return
+	 */
+	@ApiOperation(value = "获得单支股票,固定连涨天数的统计信息")
+	@RequestMapping(value="{dataId}/stat/single/{count}",method=RequestMethod.GET)
+	public   HistoryDataStat statSingle(@PathVariable String dataId,@PathVariable Integer count ){
+		log.info("get sock ["+dataId+"] stats info with count ["+count+"].");
+		 Map<Integer, HistoryDataStat> statMap = historyService.stat(dataId);
+		 if(statMap.containsKey(count)){
+			 return statMap.get(count);
+		 }
+		 return new HistoryDataStat();
 	}
 }
