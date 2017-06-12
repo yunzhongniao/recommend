@@ -8,15 +8,25 @@ import org.yunzhong.service.model.HistoryDataStat;
 
 public interface HistoryDataService {
 
-    /**
-     * @param datas
-     * @return
-     */
-    int batchInsert(List<HistoryData> datas);
+	/**
+	 * @param datas
+	 * @return
+	 */
+	int batchInsert(List<HistoryData> datas);
 
 	/**
+	 * 连涨统计
+	 * 
 	 * @param dataId
 	 * @return
 	 */
-    Map<Integer, HistoryDataStat> stat(String dataId);
+	Map<Integer, HistoryDataStat> stat(String dataId);
+
+	/**
+	 * 涨停统计
+	 * 
+	 * @param dataId
+	 * @return
+	 */
+	Map<Integer, HistoryDataStat> statUpStaying(String dataId);
 }
