@@ -9,7 +9,7 @@
 	<insert id="batchInsert" keyColumn="id" keyProperty="id"
 		useGeneratedKeys="false">
 		insert into history_datas(id, history_date,open, max,
-		min,close,deal_count, deal_value)
+		min,close,deal_count, deal_value,up_rate)
 		values
 		<foreach collection="datas" item="data" separator=",">
 			<trim prefix="(" suffix=")">
@@ -20,7 +20,8 @@
 				#{data.min},
 				#{data.close},
 				#{data.dealCount},
-				#{data.dealValue}
+				#{data.dealValue},
+				#{data.upRate}
 			</trim>
 		</foreach>
 	</insert>

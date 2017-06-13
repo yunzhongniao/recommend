@@ -7,10 +7,14 @@ import java.util.Map.Entry;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.yunzhong.controller.param.StatParam;
 import org.yunzhong.service.biz.HistoryDataService;
+import org.yunzhong.service.model.HistoryDataPreStat;
 import org.yunzhong.service.model.HistoryDataStat;
 
 import io.swagger.annotations.Api;
@@ -84,5 +88,17 @@ public class HistoryDataController {
 			result.put(next.getKey(), next.getValue().getUpCount());
 		}
 		return result;
+	}
+
+	/**
+	 * @param dataId
+	 * @param count
+	 * @return
+	 */
+	@ApiOperation(value = "直接根据upRate字段计算涨幅，给出下一天继续涨的概率")
+	@RequestMapping(value = "preview/rate/single", method = RequestMethod.POST)
+	public @ResponseBody HistoryDataPreStat preUpRate(@RequestBody StatParam param) {
+		log.info("get sock [" + param.getDataId() + "] rate up staying preview.");
+		return historyService.preUpRate(param);
 	}
 }

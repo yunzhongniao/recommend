@@ -1,5 +1,6 @@
 package org.yunzhong.service.biz.impl;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -12,9 +13,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
+import org.yunzhong.controller.param.StatParam;
 import org.yunzhong.service.biz.HistoryDataService;
 import org.yunzhong.service.dao.HistoryDataDAO;
 import org.yunzhong.service.model.HistoryData;
+import org.yunzhong.service.model.HistoryDataPreStat;
 import org.yunzhong.service.model.HistoryDataStat;
 import org.yunzhong.service.model.HistoryDataStat.HistoryDataCollection;
 import org.yunzhong.util.SockUtil;
@@ -130,6 +133,51 @@ public class HistoryDataServiceImpl implements HistoryDataService {
 					startDate = null;
 				}
 			}
+		}
+		return result;
+	}
+
+	@Override
+	public HistoryDataPreStat preUpRate(StatParam param) {
+		List<HistoryData> datas = historyDao.selectById(param.getDataId());
+		HistoryDataPreStat result = new HistoryDataPreStat();
+		result.setDataId(param.getDataId());
+		result.setPercentage(param.getPercentage());
+		result.setUpStayCount(param.getUpStayCount());
+
+		if (CollectionUtils.isEmpty(datas)) {
+			return result;
+		}
+
+		int count = 0;
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+		for (HistoryData data : datas) {
+			if (data.getUpRate() == null) {
+				continue;
+			}
+			if (count == param.getUpStayCount()) { // 连涨次数刚好，看当前的data是跌还是涨。
+				log.info("date: " + formatter.format(data.getDate()) + " | uprate: " + data.getUpRate());
+				result.totalCountPlus();
+				if (data.getUpRate() > 0) {
+					result.upCountPlus();
+				} else if (data.getUpRate() < 0) {
+					result.downCountPlus();
+				} else {
+					result.unchangeCountPlus();
+				}
+				if (data.getUpRate() >= param.getPercentage()) {
+					count++;
+				} else {
+					count = 0;
+				}
+			} else {// 如果连涨的次数少于目标，则继续累计；如果连涨的次数多余目标，继续向下查看，直到结束本次连涨。
+				if (data.getUpRate() >= param.getPercentage()) {
+					count++;
+				} else {
+					count = 0;
+				}
+			}
+
 		}
 		return result;
 	}

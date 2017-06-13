@@ -92,4 +92,60 @@ public class ImportData extends BasicSpringTest {
 			}
 		}
 	}
+
+	/**
+	 * 
+	 */
+	@Test
+	public void initWithUpRate() {
+		File file = new File("C:/Users/yunzhong/Desktop/SH600177.csv");
+		String id = file.getName().replace(".csv", "");
+		log.info("init [" + id + "]");
+		if (StringUtils.isEmpty(id)) {
+			log.warn("Failed to parse file name {1}", file.getName());
+			return;
+		}
+		List<String> readLines;
+		try {
+			readLines = Files.readLines(file, Charset.forName("GBK"));
+			if (CollectionUtils.isEmpty(readLines)) {
+				log.info("There are no data in file {1}", file.getName());
+			} else {
+				List<HistoryData> datas = new ArrayList<>();
+				for (String readLine : readLines) {
+					StringTokenizer tokenizer = new StringTokenizer(readLine, ",");
+
+					HistoryData data = new HistoryData();
+					data.setId(id);
+					SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+					String date = tokenizer.nextToken();
+					data.setDate(formatter.parse(date)); //date
+
+					String inId = tokenizer.nextToken(); //id
+					String name = tokenizer.nextToken(); //name
+					
+					data.setClose(Double.valueOf(tokenizer.nextToken()));
+					data.setMax(Double.valueOf(tokenizer.nextToken()));
+					data.setMin(Double.valueOf(tokenizer.nextToken()));
+					data.setOpen(Double.valueOf(tokenizer.nextToken()));
+					String oldClose = tokenizer.nextToken();
+					String upValue = tokenizer.nextToken();
+					String upRate = tokenizer.nextToken();
+					if(!upRate.contains("N")){
+						data.setUpRate(Double.valueOf(upRate));
+					}
+					String changeRate = tokenizer.nextToken();
+					data.setDealCount(Long.valueOf(tokenizer.nextToken()));
+					data.setDealValue(Double.valueOf(tokenizer.nextToken()));
+					
+					datas.add(data);
+				}
+				historyService.batchInsert(datas);
+			}
+		} catch (IOException e) {
+			log.error("Failed to read file {" + file.getName() + "}", e);
+		} catch (ParseException e) {
+			log.error("Failed to read file {" + file.getName() + "}", e);
+		}
+	}
 }

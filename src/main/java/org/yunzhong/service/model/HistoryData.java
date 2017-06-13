@@ -22,6 +22,6 @@ public class HistoryData extends BaseModel {
     private Double close;
     private Long dealCount;
     private Double dealValue;
-    
+    private Double upRate;
     
 }
