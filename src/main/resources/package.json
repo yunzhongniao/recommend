@@ -1,0 +1,22 @@
+{
+  "name": "recommand-web",
+  "version": "1.0.0",
+  "description": "recommand web",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "license": "APACHE 2.0",
+  "homepage": "",
+  "scripts": {
+  },
+  "dependencies": {
+  	"bootstrap":"~3.3.7",
+  	"jquery":"~3.2.1",
+  	"sockjs-client":"~1.1.4",
+  	"stomp-websocket":"~1.7.1"
+  },
+  "devDependencies": {
+  },
+  "author": "yunzhong"
+}

@@ -1,0 +1,354 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'D:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'D:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install' ]
+2 info using npm@3.10.10
+3 info using node@v6.11.0
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly install normalizeTree
+8 silly loadCurrentTree Finishing
+9 silly loadIdealTree Starting
+10 silly install loadIdealTree
+11 silly cloneCurrentTree Starting
+12 silly install cloneCurrentTreeToIdealTree
+13 silly cloneCurrentTree Finishing
+14 silly loadShrinkwrap Starting
+15 silly install loadShrinkwrap
+16 silly loadShrinkwrap Finishing
+17 silly loadAllDepsIntoIdealTree Starting
+18 silly install loadAllDepsIntoIdealTree
+19 silly fetchNamedPackageData jquery
+20 silly mapToRegistry name jquery
+21 silly mapToRegistry using default registry
+22 silly mapToRegistry registry https://registry.npmjs.org/
+23 silly mapToRegistry data Result {
+23 silly mapToRegistry   raw: 'jquery',
+23 silly mapToRegistry   scope: null,
+23 silly mapToRegistry   escapedName: 'jquery',
+23 silly mapToRegistry   name: 'jquery',
+23 silly mapToRegistry   rawSpec: '',
+23 silly mapToRegistry   spec: 'latest',
+23 silly mapToRegistry   type: 'tag' }
+24 silly mapToRegistry uri https://registry.npmjs.org/jquery
+25 silly fetchNamedPackageData sockjs-client
+26 silly mapToRegistry name sockjs-client
+27 silly mapToRegistry using default registry
+28 silly mapToRegistry registry https://registry.npmjs.org/
+29 silly mapToRegistry data Result {
+29 silly mapToRegistry   raw: 'sockjs-client',
+29 silly mapToRegistry   scope: null,
+29 silly mapToRegistry   escapedName: 'sockjs-client',
+29 silly mapToRegistry   name: 'sockjs-client',
+29 silly mapToRegistry   rawSpec: '',
+29 silly mapToRegistry   spec: 'latest',
+29 silly mapToRegistry   type: 'tag' }
+30 silly mapToRegistry uri https://registry.npmjs.org/sockjs-client
+31 silly fetchNamedPackageData stomp-websocket
+32 silly mapToRegistry name stomp-websocket
+33 silly mapToRegistry using default registry
+34 silly mapToRegistry registry https://registry.npmjs.org/
+35 silly mapToRegistry data Result {
+35 silly mapToRegistry   raw: 'stomp-websocket',
+35 silly mapToRegistry   scope: null,
+35 silly mapToRegistry   escapedName: 'stomp-websocket',
+35 silly mapToRegistry   name: 'stomp-websocket',
+35 silly mapToRegistry   rawSpec: '',
+35 silly mapToRegistry   spec: 'latest',
+35 silly mapToRegistry   type: 'tag' }
+36 silly mapToRegistry uri https://registry.npmjs.org/stomp-websocket
+37 verbose request uri https://registry.npmjs.org/stomp-websocket
+38 verbose request no auth needed
+39 info attempt registry request try #1 at 08:25:23
+40 verbose request id a7bed60369f27e52
+41 http request GET https://registry.npmjs.org/stomp-websocket
+42 verbose request uri https://registry.npmjs.org/jquery
+43 verbose request no auth needed
+44 info attempt registry request try #1 at 08:25:24
+45 verbose etag W/"593e5e05-16062"
+46 verbose lastModified Mon, 12 Jun 2017 09:25:25 GMT
+47 http request GET https://registry.npmjs.org/jquery
+48 verbose request uri https://registry.npmjs.org/sockjs-client
+49 verbose request no auth needed
+50 info attempt registry request try #1 at 08:25:24
+51 verbose etag W/"591049ac-f220"
+52 verbose lastModified Mon, 08 May 2017 10:34:20 GMT
+53 http request GET https://registry.npmjs.org/sockjs-client
+54 http 304 https://registry.npmjs.org/sockjs-client
+55 verbose headers { date: 'Tue, 13 Jun 2017 00:25:24 GMT',
+55 verbose headers   via: '1.1 varnish',
+55 verbose headers   'cache-control': 'max-age=300',
+55 verbose headers   etag: 'W/"591049ac-f220"',
+55 verbose headers   age: '65',
+55 verbose headers   connection: 'keep-alive',
+55 verbose headers   'x-served-by': 'cache-nrt6135-NRT',
+55 verbose headers   'x-cache': 'HIT',
+55 verbose headers   'x-cache-hits': '1',
+55 verbose headers   'x-timer': 'S1497313525.832328,VS0,VE0',
+55 verbose headers   vary: 'Accept-Encoding' }
+56 silly get cb [ 304,
+56 silly get   { date: 'Tue, 13 Jun 2017 00:25:24 GMT',
+56 silly get     via: '1.1 varnish',
+56 silly get     'cache-control': 'max-age=300',
+56 silly get     etag: 'W/"591049ac-f220"',
+56 silly get     age: '65',
+56 silly get     connection: 'keep-alive',
+56 silly get     'x-served-by': 'cache-nrt6135-NRT',
+56 silly get     'x-cache': 'HIT',
+56 silly get     'x-cache-hits': '1',
+56 silly get     'x-timer': 'S1497313525.832328,VS0,VE0',
+56 silly get     vary: 'Accept-Encoding' } ]
+57 verbose etag https://registry.npmjs.org/sockjs-client from cache
+58 verbose get saving sockjs-client to C:\Users\yunzhong\AppData\Roaming\npm-cache\registry.npmjs.org\sockjs-client\.cache.json
+59 verbose correctMkdir C:\Users\yunzhong\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+60 silly resolveWithNewModule sockjs-client@1.1.4 checking installable status
+61 silly cache add args [ 'sockjs-client@~1.1.4', null ]
+62 verbose cache add spec sockjs-client@~1.1.4
+63 silly cache add parsed spec Result {
+63 silly cache add   raw: 'sockjs-client@~1.1.4',
+63 silly cache add   scope: null,
+63 silly cache add   escapedName: 'sockjs-client',
+63 silly cache add   name: 'sockjs-client',
+63 silly cache add   rawSpec: '~1.1.4',
+63 silly cache add   spec: '>=1.1.4 <1.2.0',
+63 silly cache add   type: 'range' }
+64 silly addNamed sockjs-client@>=1.1.4 <1.2.0
+65 verbose addNamed ">=1.1.4 <1.2.0" is a valid semver range for sockjs-client
+66 silly addNameRange { name: 'sockjs-client',
+66 silly addNameRange   range: '>=1.1.4 <1.2.0',
+66 silly addNameRange   hasData: false }
+67 silly mapToRegistry name sockjs-client
+68 silly mapToRegistry using default registry
+69 silly mapToRegistry registry https://registry.npmjs.org/
+70 silly mapToRegistry data Result {
+70 silly mapToRegistry   raw: 'sockjs-client',
+70 silly mapToRegistry   scope: null,
+70 silly mapToRegistry   escapedName: 'sockjs-client',
+70 silly mapToRegistry   name: 'sockjs-client',
+70 silly mapToRegistry   rawSpec: '',
+70 silly mapToRegistry   spec: 'latest',
+70 silly mapToRegistry   type: 'tag' }
+71 silly mapToRegistry uri https://registry.npmjs.org/sockjs-client
+72 verbose addNameRange registry:https://registry.npmjs.org/sockjs-client not in flight; fetching
+73 verbose get https://registry.npmjs.org/sockjs-client not expired, no request
+74 silly addNameRange number 2 { name: 'sockjs-client', range: '>=1.1.4 <1.2.0', hasData: true }
+75 silly addNameRange versions [ 'sockjs-client',
+75 silly addNameRange   [ '0.1.0',
+75 silly addNameRange     '0.1.1',
+75 silly addNameRange     '0.1.2',
+75 silly addNameRange     '0.1.3',
+75 silly addNameRange     '1.0.0-beta.4',
+75 silly addNameRange     '1.0.0-beta.5',
+75 silly addNameRange     '1.0.0-beta.6',
+75 silly addNameRange     '1.0.0-beta.7',
+75 silly addNameRange     '1.0.0-beta.8',
+75 silly addNameRange     '1.0.0-beta.9',
+75 silly addNameRange     '1.0.0-beta.10',
+75 silly addNameRange     '1.0.0-beta.11',
+75 silly addNameRange     '1.0.0-beta.12',
+75 silly addNameRange     '1.0.0-beta.13',
+75 silly addNameRange     '1.0.0',
+75 silly addNameRange     '1.0.1',
+75 silly addNameRange     '1.0.2',
+75 silly addNameRange     '1.0.3',
+75 silly addNameRange     '1.1.0',
+75 silly addNameRange     '1.1.1',
+75 silly addNameRange     '1.1.2',
+75 silly addNameRange     '1.1.4' ] ]
+76 silly addNamed sockjs-client@1.1.4
+77 verbose addNamed "1.1.4" is a plain semver version for sockjs-client
+78 silly cache afterAdd sockjs-client@1.1.4
+79 verbose afterAdd C:\Users\yunzhong\AppData\Roaming\npm-cache\sockjs-client\1.1.4\package\package.json not in flight; writing
+80 verbose correctMkdir C:\Users\yunzhong\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+81 verbose afterAdd C:\Users\yunzhong\AppData\Roaming\npm-cache\sockjs-client\1.1.4\package\package.json written
+82 http 304 https://registry.npmjs.org/jquery
+83 verbose headers { date: 'Tue, 13 Jun 2017 00:25:25 GMT',
+83 verbose headers   via: '1.1 varnish',
+83 verbose headers   'cache-control': 'max-age=300',
+83 verbose headers   etag: 'W/"593e5e05-16062"',
+83 verbose headers   age: '204',
+83 verbose headers   connection: 'keep-alive',
+83 verbose headers   'x-served-by': 'cache-nrt6128-NRT',
+83 verbose headers   'x-cache': 'HIT',
+83 verbose headers   'x-cache-hits': '2',
+83 verbose headers   'x-timer': 'S1497313526.539489,VS0,VE0',
+83 verbose headers   vary: 'Accept-Encoding' }
+84 silly get cb [ 304,
+84 silly get   { date: 'Tue, 13 Jun 2017 00:25:25 GMT',
+84 silly get     via: '1.1 varnish',
+84 silly get     'cache-control': 'max-age=300',
+84 silly get     etag: 'W/"593e5e05-16062"',
+84 silly get     age: '204',
+84 silly get     connection: 'keep-alive',
+84 silly get     'x-served-by': 'cache-nrt6128-NRT',
+84 silly get     'x-cache': 'HIT',
+84 silly get     'x-cache-hits': '2',
+84 silly get     'x-timer': 'S1497313526.539489,VS0,VE0',
+84 silly get     vary: 'Accept-Encoding' } ]
+85 verbose etag https://registry.npmjs.org/jquery from cache
+86 verbose get saving jquery to C:\Users\yunzhong\AppData\Roaming\npm-cache\registry.npmjs.org\jquery\.cache.json
+87 verbose correctMkdir C:\Users\yunzhong\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+88 silly resolveWithNewModule jquery@3.2.1 checking installable status
+89 silly cache add args [ 'jquery@~3.2.1', null ]
+90 verbose cache add spec jquery@~3.2.1
+91 silly cache add parsed spec Result {
+91 silly cache add   raw: 'jquery@~3.2.1',
+91 silly cache add   scope: null,
+91 silly cache add   escapedName: 'jquery',
+91 silly cache add   name: 'jquery',
+91 silly cache add   rawSpec: '~3.2.1',
+91 silly cache add   spec: '>=3.2.1 <3.3.0',
+91 silly cache add   type: 'range' }
+92 silly addNamed jquery@>=3.2.1 <3.3.0
+93 verbose addNamed ">=3.2.1 <3.3.0" is a valid semver range for jquery
+94 silly addNameRange { name: 'jquery', range: '>=3.2.1 <3.3.0', hasData: false }
+95 silly mapToRegistry name jquery
+96 silly mapToRegistry using default registry
+97 silly mapToRegistry registry https://registry.npmjs.org/
+98 silly mapToRegistry data Result {
+98 silly mapToRegistry   raw: 'jquery',
+98 silly mapToRegistry   scope: null,
+98 silly mapToRegistry   escapedName: 'jquery',
+98 silly mapToRegistry   name: 'jquery',
+98 silly mapToRegistry   rawSpec: '',
+98 silly mapToRegistry   spec: 'latest',
+98 silly mapToRegistry   type: 'tag' }
+99 silly mapToRegistry uri https://registry.npmjs.org/jquery
+100 verbose addNameRange registry:https://registry.npmjs.org/jquery not in flight; fetching
+101 verbose get https://registry.npmjs.org/jquery not expired, no request
+102 silly addNameRange number 2 { name: 'jquery', range: '>=3.2.1 <3.3.0', hasData: true }
+103 silly addNameRange versions [ 'jquery',
+103 silly addNameRange   [ '1.5.1',
+103 silly addNameRange     '1.6.2',
+103 silly addNameRange     '1.6.3',
+103 silly addNameRange     '1.7.2',
+103 silly addNameRange     '1.7.3',
+103 silly addNameRange     '1.8.2',
+103 silly addNameRange     '1.8.3',
+103 silly addNameRange     '2.1.0-beta2',
+103 silly addNameRange     '2.1.0-beta3',
+103 silly addNameRange     '1.11.0-beta3',
+103 silly addNameRange     '1.11.0-rc1',
+103 silly addNameRange     '2.1.0-rc1',
+103 silly addNameRange     '1.11.0',
+103 silly addNameRange     '2.1.0',
+103 silly addNameRange     '2.1.1-beta1',
+103 silly addNameRange     '1.11.1-beta1',
+103 silly addNameRange     '2.1.1-rc1',
+103 silly addNameRange     '1.11.1-rc1',
+103 silly addNameRange     '2.1.1-rc2',
+103 silly addNameRange     '1.11.1-rc2',
+103 silly addNameRange     '2.1.1',
+103 silly addNameRange     '1.11.1',
+103 silly addNameRange     '1.9.1',
+103 silly addNameRange     '2.1.2',
+103 silly addNameRange     '1.11.2',
+103 silly addNameRange     '2.1.3',
+103 silly addNameRange     '2.1.4',
+103 silly addNameRange     '1.11.3',
+103 silly addNameRange     '3.0.0-alpha1',
+103 silly addNameRange     '1.12.0',
+103 silly addNameRange     '2.2.0',
+103 silly addNameRange     '3.0.0-beta1',
+103 silly addNameRange     '1.12.1',
+103 silly addNameRange     '2.2.1',
+103 silly addNameRange     '1.12.2',
+103 silly addNameRange     '2.2.2',
+103 silly addNameRange     '1.12.3',
+103 silly addNameRange     '2.2.3',
+103 silly addNameRange     '1.12.4',
+103 silly addNameRange     '2.2.4',
+103 silly addNameRange     '3.0.0-rc1',
+103 silly addNameRange     '3.0.0',
+103 silly addNameRange     '3.1.0',
+103 silly addNameRange     '3.1.1',
+103 silly addNameRange     '3.2.0',
+103 silly addNameRange     '3.2.1' ] ]
+104 silly addNamed jquery@3.2.1
+105 verbose addNamed "3.2.1" is a plain semver version for jquery
+106 silly cache afterAdd jquery@3.2.1
+107 verbose afterAdd C:\Users\yunzhong\AppData\Roaming\npm-cache\jquery\3.2.1\package\package.json not in flight; writing
+108 verbose correctMkdir C:\Users\yunzhong\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+109 verbose afterAdd C:\Users\yunzhong\AppData\Roaming\npm-cache\jquery\3.2.1\package\package.json written
+110 http 404 https://registry.npmjs.org/stomp-websocket
+111 verbose headers { 'content-type': 'application/json',
+111 verbose headers   'cache-control': 'max-age=0',
+111 verbose headers   'content-length': '2',
+111 verbose headers   'accept-ranges': 'bytes',
+111 verbose headers   date: 'Tue, 13 Jun 2017 00:25:25 GMT',
+111 verbose headers   via: '1.1 varnish',
+111 verbose headers   age: '0',
+111 verbose headers   connection: 'keep-alive',
+111 verbose headers   'x-served-by': 'cache-nrt6127-NRT',
+111 verbose headers   'x-cache': 'MISS',
+111 verbose headers   'x-cache-hits': '0',
+111 verbose headers   'x-timer': 'S1497313525.846769,VS0,VE763',
+111 verbose headers   vary: 'Accept-Encoding' }
+112 silly get cb [ 404,
+112 silly get   { 'content-type': 'application/json',
+112 silly get     'cache-control': 'max-age=0',
+112 silly get     'content-length': '2',
+112 silly get     'accept-ranges': 'bytes',
+112 silly get     date: 'Tue, 13 Jun 2017 00:25:25 GMT',
+112 silly get     via: '1.1 varnish',
+112 silly get     age: '0',
+112 silly get     connection: 'keep-alive',
+112 silly get     'x-served-by': 'cache-nrt6127-NRT',
+112 silly get     'x-cache': 'MISS',
+112 silly get     'x-cache-hits': '0',
+112 silly get     'x-timer': 'S1497313525.846769,VS0,VE763',
+112 silly get     vary: 'Accept-Encoding' } ]
+113 silly fetchPackageMetaData Error: Registry returned 404 for GET on https://registry.npmjs.org/stomp-websocket
+113 silly fetchPackageMetaData     at makeError (D:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:302:12)
+113 silly fetchPackageMetaData     at CachingRegistryClient.<anonymous> (D:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:280:14)
+113 silly fetchPackageMetaData     at Request._callback (D:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:210:14)
+113 silly fetchPackageMetaData     at Request.self.callback (D:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:187:22)
+113 silly fetchPackageMetaData     at emitTwo (events.js:106:13)
+113 silly fetchPackageMetaData     at Request.emit (events.js:191:7)
+113 silly fetchPackageMetaData     at Request.<anonymous> (D:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:1048:10)
+113 silly fetchPackageMetaData     at emitOne (events.js:96:13)
+113 silly fetchPackageMetaData     at Request.emit (events.js:188:7)
+113 silly fetchPackageMetaData     at IncomingMessage.<anonymous> (D:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:969:12)
+113 silly fetchPackageMetaData  error for stomp-websocket@~1.7.1 { Error: Registry returned 404 for GET on https://registry.npmjs.org/stomp-websocket
+113 silly fetchPackageMetaData     at makeError (D:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:302:12)
+113 silly fetchPackageMetaData     at CachingRegistryClient.<anonymous> (D:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:280:14)
+113 silly fetchPackageMetaData     at Request._callback (D:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:210:14)
+113 silly fetchPackageMetaData     at Request.self.callback (D:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:187:22)
+113 silly fetchPackageMetaData     at emitTwo (events.js:106:13)
+113 silly fetchPackageMetaData     at Request.emit (events.js:191:7)
+113 silly fetchPackageMetaData     at Request.<anonymous> (D:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:1048:10)
+113 silly fetchPackageMetaData     at emitOne (events.js:96:13)
+113 silly fetchPackageMetaData     at Request.emit (events.js:188:7)
+113 silly fetchPackageMetaData     at IncomingMessage.<anonymous> (D:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:969:12) pkgid: 'stomp-websocket', statusCode: 404, code: 'E404' }
+114 silly rollbackFailedOptional Starting
+115 silly rollbackFailedOptional Finishing
+116 silly runTopLevelLifecycles Finishing
+117 silly install printInstalled
+118 verbose stack Error: Registry returned 404 for GET on https://registry.npmjs.org/stomp-websocket
+118 verbose stack     at makeError (D:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:302:12)
+118 verbose stack     at CachingRegistryClient.<anonymous> (D:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:280:14)
+118 verbose stack     at Request._callback (D:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:210:14)
+118 verbose stack     at Request.self.callback (D:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:187:22)
+118 verbose stack     at emitTwo (events.js:106:13)
+118 verbose stack     at Request.emit (events.js:191:7)
+118 verbose stack     at Request.<anonymous> (D:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:1048:10)
+118 verbose stack     at emitOne (events.js:96:13)
+118 verbose stack     at Request.emit (events.js:188:7)
+118 verbose stack     at IncomingMessage.<anonymous> (D:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:969:12)
+119 verbose statusCode 404
+120 verbose pkgid stomp-websocket
+121 verbose cwd D:\workroom\workspace3p\recommend\src\main\resources
+122 error Windows_NT 10.0.14393
+123 error argv "D:\\Program Files\\nodejs\\node.exe" "D:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install"
+124 error node v6.11.0
+125 error npm  v3.10.10
+126 error code E404
+127 error 404 Registry returned 404 for GET on https://registry.npmjs.org/stomp-websocket
+128 error 404
+129 error 404 'stomp-websocket' is not in the npm registry.
+130 error 404 You should bug the author to publish it (or use the name yourself!)
+131 error 404 It was specified as a dependency of 'recommand-web'
+132 error 404 Note that you can also install from a
+133 error 404 tarball, folder, http url, or git url.
+134 verbose exit [ 1, true ]
