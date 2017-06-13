@@ -28,5 +28,5 @@ public interface HistoryDataService {
 	 * @param dataId
 	 * @return
 	 */
-	Map<Integer, HistoryDataStat> statUpStaying(String dataId);
+	Map<Integer, HistoryDataStat> statUpStaying(String dataId, Double percentage);
 }

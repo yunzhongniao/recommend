@@ -1,6 +1,9 @@
 package org.yunzhong.controller;
 
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -56,9 +59,30 @@ public class HistoryDataController {
 	 * @return
 	 */
 	@ApiOperation(value = "获得单支股票连续涨停的统计信息")
-	@RequestMapping(value = "{dataId}/stat/single", method = RequestMethod.GET)
-	public Map<Integer, HistoryDataStat> statUpStaySingle(@PathVariable String dataId) {
+	@RequestMapping(value = "{dataId}/{percentage}/stat/single", method = RequestMethod.GET)
+	public Map<Integer, HistoryDataStat> statUpStaySingle(@PathVariable String dataId,
+			@PathVariable(required = false) Double percentage) {
 		log.info("get sock [" + dataId + "] up staying.");
-		return historyService.stat(dataId);
+		return historyService.statUpStaying(dataId, percentage);
+	}
+
+	/**
+	 * @param dataId
+	 * @param count
+	 * @return
+	 */
+	@ApiOperation(value = "获得单支股票连续涨停的数据统计信息")
+	@RequestMapping(value = "{dataId}/{percentage}/stat/single/simple", method = RequestMethod.GET)
+	public Map<Integer, Integer> statUpStaySingleSimple(@PathVariable String dataId,
+			@PathVariable(required = false) Double percentage) {
+		log.info("get sock [" + dataId + "] up staying simple.");
+		Map<Integer, Integer> result = new HashMap<>();
+		Map<Integer, HistoryDataStat> temp = historyService.statUpStaying(dataId, percentage);
+		Iterator<Entry<Integer, HistoryDataStat>> iterator = temp.entrySet().iterator();
+		while (iterator.hasNext()) {
+			Entry<Integer, HistoryDataStat> next = iterator.next();
+			result.put(next.getKey(), next.getValue().getUpCount());
+		}
+		return result;
 	}
 }

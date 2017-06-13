@@ -36,6 +36,11 @@ public class HistoryDataStat extends BaseModel {
 	 * 连涨天数
 	 */
 	private Integer count;
+	
+	/**
+	 * 出现次数
+	 */
+	private Integer upCount;
 
 	/**
 	 * 符合此连涨天数的区段列表
